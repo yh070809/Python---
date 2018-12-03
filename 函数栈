@@ -1,0 +1,8 @@
+函数栈 
+（Stack）
+
+先进后出 First In Last Out 
+
+栈只支持两个操作： push 和 pop
+
+pop 弹出 push 压入 
