@@ -6,4 +6,12 @@
 避免重复insert (INSERT IGNOR)
 
 
-2.Order By 的默认是ASC 可以不写
+2.Order By 的默认是ASC 可以不写  
+
+
+3.利用Store Procedure 可以减少query 数据库的次数 
+Store procedure 通常用在几个表的连续query 中 并且 后一个query需要用到前一个表的结果
+
+
+4. trigger  同理
+
