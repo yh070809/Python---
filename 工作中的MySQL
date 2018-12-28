@@ -1,0 +1,9 @@
+1. 建立唯一引索，引索 可以是有几个column 组成的唯一值
+例如 一个表 有的三个 column 为日期 date , 小时 Hour ， 人流量 number
+
+日期和小时可以组成唯一索引，
+在唯一索引的基础上
+避免重复insert (INSERT IGNOR)
+
+
+2.Order By 的默认是ASC 可以不写
