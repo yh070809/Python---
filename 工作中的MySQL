@@ -15,3 +15,13 @@ Store procedure 通常用在几个表的连续query 中 并且 后一个query需
 
 4. trigger  同理
 
+
+注意数据库中的system time zone 配置
+
+>mysql -u root -p;
+> show variables like 
+"%time_zone%;
+
+> set global time_zone ='+8:00'
+
+> flush privileges; //立即生效
