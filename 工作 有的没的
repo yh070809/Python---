@@ -62,3 +62,53 @@ find /home/ljianhui -user ljianhui # 在目录/home/ljianhui中找出所有者�
 find / -name passwd # 查找文件名为passwd的文件
 find . -perm 0755 # 查找当前目录中文件权限的0755的文件
 find . -size +12k # 查找当前目录中大于12KB的文件，注意c表示byte
+
+
+
+
+Node JS
+对于Node JS 使用express 框架 配置如下：
+const express = require('express');
+var http = require('http');
+var path = require('path');
+var ejs=require('ejs')
+var bodyParser = require('body-parser');
+
+
+var app = express();
+app.engine('html',ejs.__express);
+app.set('port', process.env.PORT || 3000);
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'jade');
+
+
+
+app.use(express.static(path.join(__dirname, 'views'))); 
+
+app.get('/', (req,res) =>{
+    res.send('Hello API')
+});
+app.get('/index', function(req,res){ 
+res.render('index.html'); 
+})
+
+
+http.createServer(app).listen(3000,function(){
+    console.log('listening to 3000.....')
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
