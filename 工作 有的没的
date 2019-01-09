@@ -98,8 +98,11 @@ http.createServer(app).listen(3000,function(){
 })
 
 
+对于Node JS ,express() 搭建web的一点儿感想
 
+总得来说 不如react 方便, install 过得package 需要再JS 再引入一遍min.js 文件
 
+AJAX 也不如 axios 来得方便
 
 
 
