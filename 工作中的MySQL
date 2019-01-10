@@ -25,3 +25,12 @@ Store procedure 通常用在几个表的连续query 中 并且 后一个query需
 > set global time_zone ='+8:00'
 
 > flush privileges; //立即生效
+
+
+5. 关于多次query 数据库
+
+asyn.each 批量insert 
+asyn.eachSeries 按顺序批量Insert
+asyc.forEachOf 获取多条Select 语句的查询结果
+asyn.series 按顺序执行
+async.waterfall 按顺序执行任务 并且下一条任务可以获取上一条任务的结果
