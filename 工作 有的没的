@@ -161,3 +161,20 @@ C/C++中的指针
 C/C++ 中指针饱受诟病的根本原因是指针运算和内存释放。
 
 C/C++ 语言中的裸指针可以自由偏移，甚至可以在某些情况下偏移进入操作系统核心区域。我们的计算机操作系统经常需要更新、修复漏洞的本质，是为解决指针越界访问所导致的“缓冲区溢出”。
+
+package main
+import (
+    "fmt"
+    "time"
+)
+func main() {
+    for i:=0;i<10000;i++ {
+        go func() {
+           fmt.Println("start ", i)
+           time.Sleep(time.Duration(100)*time.Second)
+           fmt.Println(i)
+        }()
+    }
+    time.Sleep(time.Duration(2000)*time.Second)
+    fmt.Println("main end")
+}
