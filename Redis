@@ -1,0 +1,85 @@
+> set server:name "fido"
+OK
+> get server:name
+"fido"
+
+
+Other common operations provided by key-value stores are DEL to delete a given key and associated value, SET-if-not-exists (called SETNX on Redis) that sets a key only if it does not already exist, and INCR to atomically increment a number stored at a given key:
+
+
+    SET connections 10
+    INCR connections => 11
+    INCR connections => 12
+    DEL connections
+    INCR connections => 1
+> set connections 10;
+OK
+> del connections
+(integer) 1
+> incr connections
+(integer) 1
+> incr connections
+(integer) 2
+> get connections
+"2"
+
+
+> set rescources:lock "redis demo"
+OK
+> expire rescources: lock 60
+> ttl rescources:lock
+(integer) -1
+
+
+
+> rpush friends "Alice"
+(integer) 1
+> lpush friends "bob"
+(integer) 2
+> get friends
+
+> get friends
+(error) WRONGTYPE Operation against a key holding the wrong kind of value
+
+
+> lrange friends 0 1
+1) "bob"
+2) "Alice"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
