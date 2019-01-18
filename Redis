@@ -46,9 +46,54 @@ OK
 1) "bob"
 2) "Alice"
 
+check list length
+> llen friends
+(integer) 2
+> rpop friends
+"Alice"
+> lpop friends
+"bob"
+> llen friends
+(integer) 0
 
 
 
+A set is similar to a list, except it does not have a specific order and each element may only appear once.
+> sadd superpowers "flight"
+(integer) 1
+> sadd superpowers "x-ray vision"
+(integer) 1
+> sadd superpowers "reflexes"
+(integer) 1
+
+SMEMBERS returns a list of all the members of this set.
+
+> smembers superpowers
+1) "flight"
+2) "x-ray vision"
+3) "reflexes"
+
+SISMEMBER tests if the given value is in the set. It returns 1 if the value is there and 0 if it is not.
+> sismember superpowers "flight"
+(integer) 1
+> sismember superpowers "hah"
+(integer) 0
+
+
+SREM delete a memeber
+> srem superpowers "reflexes"
+1
+> smembers superpowers
+1) "flight"
+2) "x-ray vision"
+
+
+SUNION combines two or more sets and returns the list of all elements.
+
+> sunion superpowers birdpowers
+1) "flight"
+2) "pecking"
+3) "x-ray vision"
 
 
 
