@@ -178,3 +178,12 @@ func main() {
     time.Sleep(time.Duration(2000)*time.Second)
     fmt.Println("main end")
 }
+
+partition table 的母表是空的 用来query
+子表动态删除和新建
+
+集群
+
+go 语言中 “-” 可以当作“垃圾桶” 来使用
+
+iota 可以作为特殊的自增变量
