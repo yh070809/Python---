@@ -17,3 +17,48 @@ rune 相当于go 的char
 使用utf.RuneCountInString 获得字符数量
 使用len 获得字节长度
 使用[]byte 获得字节
+
+
+
+
+
+package main
+
+import (
+	"database/sql"
+	"fmt"
+	_ "github.com/lib/pq"
+)
+const (
+	host     = "localhost"
+	port     =  5432
+	user     = "postgres"
+	password = "5ensenT!me12345"
+	dbname   = "postgres"
+)
+
+func main() {
+	// Connect to the DB, panic if failed
+	db, err := sql.Open("postgres", "postgres://postgres:5enseT!me12345@localhost/postgres?sslmode=disable")
+	if err != nil {
+		fmt.Println(`Could not connect to db`)
+		panic(err)
+	}else {
+		rows, err := db.Query(`SELECT * FROM unicron_normalized `)
+		if err != nil {
+			panic(err)
+		}
+
+
+		for rows.Next() {
+
+			var time string
+			var request_id string
+			rows.Scan(&time, &request_id)
+			fmt.Println("hahaha")
+			fmt.Println(time, request_id)
+		}
+	}
+
+	defer db.Close()
+}
